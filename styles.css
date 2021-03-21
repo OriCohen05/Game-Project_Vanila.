@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+/*Section 1*/
+
+
+/*Footer styling*/
+
+.footer {
+    width: 100% + 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    height: -25px;
+    clear: both;
+    position: relative;
+    height: 200px;
+    margin-top: 500px;
+    min-height: 100%;
+    margin-left: -25px;
+    margin-right: -25px;
+    margin-bottom: -10px;
+}
+
+
+/*End of section 1*/
+
+
+/*Section 2*/
+
+
+/*Body styling*/
+
+html {
+    font-family: 'Oswald', sans-serif;
+    background-image: linear-gradient(#3b3b3b, #000000);
+    background-attachment: fixed;
+}
+
+element.style {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+/*End of section 2*/
+
+
+/*Section 3*/
+
+
+/*Header list, toolbar*/
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: linear-gradient(#3b3b3b, #000000);
+    left: 0%;
+    right: 0%;
+    position: absolute;
+    top: 0%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#Logo-li {
+    float: right;
+}
+
+
+/*Switchs color on hover*/
+
+li a:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+#imglogo {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*End of section 3*/
+
+
+/*Section 4*/
+
+
+/*Table that icluded the registiration form.*/
+
+#LoginTable {
+    background-color: rgb(172, 166, 164);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-color: white;
+    border-width: 1px;
+    border-style: solid;
+    color: white;
+    background-color: #000000;
+    background-image: linear-gradient(315deg, #000000 0%, #414141 74%);
+    filter: drop-shadow(10px 10px 4px #ebe9fd);
+}
+
+
+/*Register button*/
+
+.SubmitRegister {
+    height: auto;
+    width: auto;
+    margin-top: 10px;
+    border-radius: 40px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    background-color: white;
+    font-size: xx-large;
+    font-weight: 900;
+}
+
+
+/*All the inputs for example: First name, Last name , etc..*/
+
+input {
+    font-size: larger;
+    margin-right: 10px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    width: 140px;
+    height: 20px;
+    padding: 5px;
+    border-color: black;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+
+
+/*Switches color on gender selection*/
+
+.radio-toolbar input[type="radio"][id="male"]:checked+label {
+    background-color: rgb(17, 168, 214);
+    color: white;
+}
+
+.radio-toolbar input[type="radio"][id="female"]:checked+label {
+    background-color: hotpink;
+    color: white;
+}
+
+.radio-toolbar input[type="radio"] {
+    display: none;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: white;
+    width: 150px;
+    height: 17px;
+    margin-right: 13px;
+    padding: 2.5px;
+    padding-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+    font-family: Calibri;
+    color: black;
+    font-size: larger;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/*Centering the form to the middle.*/
+
+#form {
+    margin-top: 100px;
+}
+
+#country {
+    font-size: larger;
+    font-family: Calibri;
+    margin-right: 0px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    width: 130px;
+    height: 33px;
+    border-color: black;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+
+#email {
+    width: 320px;
+}
+
+#phoneNumber {
+    margin-left: -30px;
+    width: 170px;
+}
+
+#TOS {
+    width: auto;
+    height: auto;
+}
+
+#toslink {
+    font-weight: 100;
+    font-size: small;
+    color: red;
+}
+
+
+/*End of section 4*/
+
+
+/*Section 5*/
+
+.idle {
+    color: #ebe9fd;
+    text-align: center;
+    margin-top: 250px;
+}
+
+
+/*TOS font color - white , font size is big.*/
+
+#rules {
+    color: white;
+    font-size: 50px;
+    text-align: right;
+}
+
+
+/*End of section 5*/
+
+
+/*Section 6*/
+
+#gametable {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    margin-top: 10%;
+    border: 5px solid;
+    width: 100px;
+    height: 100px;
+}
+
+.gametds {
+    height: 25px;
+}

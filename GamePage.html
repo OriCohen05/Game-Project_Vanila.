@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="styles.css" rel="stylesheet">
+    <title>Ori's site | Game</title>
+    <link rel="icon" href="Images/Logo.png">
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <ul>
+        <li id="Logo-li"><img src="Images/Logo.png" height="50px" width="50px"></li>
+        <li><a href="../Project/LoginPage.html">Login</a></li>
+        <li><a href="../Project/GamePage.html">Game</a></li>
+
+    </ul>
+    <h1 style="text-align: center; margin-top: 80px;">Score:
+        <p id="pp"></p>
+    </h1>
+    <!-- 
+    <table align="center">
+        <tr>
+            <td>
+                <h1>Difficulty level:
+                </h1>
+                <h4 id="diff"></h4>
+                <select name="Difficulty level" id="DL" onchange="DifficultyLevel();">
+                    <option value="easy">easy</option>
+                    <option value="regular">regular</option>
+                    <option value="hard">hard</option>
+                    <option value="super hard">super hard</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+-->
+    <table id="gametable" align="center">
+        <tr id="firstrow">
+            <td class="gametds" id="td1">
+                <img id="img1" src="Images/hole.png" onclick="">
+            </td>
+            <td class="gametds" id="td2">
+                <img id="img2" src="Images/hole.png" onclick="">
+            </td>
+            <td class="gametds" id="td3">
+                <img id="img3" src="Images/hole.png" onclick="">
+            </td>
+        </tr>
+        <tr id="secondrow">
+            <td class="gametds" id="td4">
+                <img id="img4" src="Images/hole.png" onclick="">
+            </td>
+            <td class="gametds" id="td5">
+                <img id="img5" src="Images/hole.png" onclick="">
+            </td>
+            <td class="gametds" id="td6">
+                <img id="img6" src="Images/hole.png" onclick="">
+            </td>
+        </tr>
+        <tr id="thirdrow">
+            <td class="gametds" id="td7">
+                <img id="img7" src="Images/hole.png" onclick="">
+            </td>
+            <td class="gametds" id="td8">
+                <img id="img8" src="Images/hole.png" onclick="">
+            </td>
+            <td class="gametds" id="td9">
+                <img id="img9" src="Images/hole.png" onclick="">
+            </td>
+        </tr>
+    </table>
+
+    <div class=" footer ">
+        <h1> &copy; Site developed by Ori Cohen <img src="Images/Logo.png" height="100px" alt=""></h1>
+
+    </div>
+    <script src="Main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="styles.css" rel="stylesheet">
+    <title>Ori's site | Log in</title>
+    <link rel="icon" href="Images/Logo.png">
+    <meta charset="utf-8" />
+</head>
+
+<body>
+
+    <ul>
+        <li id="Logo-li"><img src="Images/Logo.png" height="50px" width="50px"></li>
+        <li><a href="../Project/LoginPage.html">Login</a></li>
+        <li><a href="../Project/GamePage.html">Game</a></li>
+    </ul>
+    <form id="form" method="post" action="?">
+        <table align="center" id="LoginTable">
+            <tr>
+                <div style="text-align: center;">
+                    <img src="Images/Register.png" width="390" height="200">
+                </div>
+            </tr>
+            <tr>
+                <td>
+                    <p>First name</p>
+                </td>
+                <td>
+                    <p>Last name</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" id="firstName" name="firstName" />
+                </td>
+                <td>
+                    <input type="text" id="lastName" name="lastName" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div class="radio-toolbar">
+                        <input type="radio" id="male" name="gender">
+                        <label for="male">Male</label>
+
+                        <input type="radio" id="female" name="gender">
+                        <label for="female">Female</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>Date of birth</p>
+                </td>
+                <td>
+                    <p>
+                        Username
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" />
+                </td>
+                <td>
+                    <input type="text" id="userName" name="userName" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        Password
+                    </p>
+                </td>
+                <td>
+                    <p>
+                        Re-enter password
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" id="password1" name="password1" />
+                </td>
+                <td>
+                    <input type="password" id="password2" name="password2" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        Email
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="email" id="email" name="email" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        Country
+                    </p>
+                </td>
+                <td>
+                    <p style="margin-left:-20px;">
+                        Phone number
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="search" id="country" name="country" />
+                </td>
+                <td>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" id="TOS" name="TOS" />
+                    <label for="TOS" style="font-size:small;">לחצו אם אתם מאשרים את  <a id="toslink"href="C:\Users\ori05\OneDrive\Desktop\Main\Project\TOS.html" > <b>תנאי השימוש שלי</b> </a></label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" id="sumbit" name="submit" value="Register" class="SubmitRegister" onclick="alert('Registered!');" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <div class=" footer ">
+        <h1> &copy; Site developed by Ori Cohen <img src="Images/Logo.png" height="100px" alt=""></h1>
+
+    </div>
+    <script src="Main.js ">
+    </script>
+</body>
+
+</html>
