@@ -8,71 +8,199 @@
     <meta charset="utf-8" />
 </head>
 
-<body>
+<body onload="OnInit()">
     <ul>
         <li id="Logo-li"><img src="Images/Logo.png" height="50px" width="50px"></li>
         <li><a href="../Project/LoginPage.html">Login</a></li>
         <li><a href="../Project/GamePage.html">Game</a></li>
 
     </ul>
+
     <h1 style="text-align: center; margin-top: 80px;">Score:
-        <p id="pp"></p>
+        <p id="Score">0</p>
     </h1>
-    <!-- 
-    <table align="center">
-        <tr>
-            <td>
-                <h1>Difficulty level:
-                </h1>
-                <h4 id="diff"></h4>
-                <select name="Difficulty level" id="DL" onchange="DifficultyLevel();">
-                    <option value="easy">easy</option>
-                    <option value="regular">regular</option>
-                    <option value="hard">hard</option>
-                    <option value="super hard">super hard</option>
-                </select>
-            </td>
-        </tr>
-    </table>
--->
-    <table id="gametable" align="center">
-        <tr id="firstrow">
-            <td class="gametds" id="td1">
-                <img id="img1" src="Images/hole.png" onclick="">
-            </td>
-            <td class="gametds" id="td2">
-                <img id="img2" src="Images/hole.png" onclick="">
-            </td>
-            <td class="gametds" id="td3">
-                <img id="img3" src="Images/hole.png" onclick="">
-            </td>
-        </tr>
-        <tr id="secondrow">
-            <td class="gametds" id="td4">
-                <img id="img4" src="Images/hole.png" onclick="">
-            </td>
-            <td class="gametds" id="td5">
-                <img id="img5" src="Images/hole.png" onclick="">
-            </td>
-            <td class="gametds" id="td6">
-                <img id="img6" src="Images/hole.png" onclick="">
-            </td>
-        </tr>
-        <tr id="thirdrow">
-            <td class="gametds" id="td7">
-                <img id="img7" src="Images/hole.png" onclick="">
-            </td>
-            <td class="gametds" id="td8">
-                <img id="img8" src="Images/hole.png" onclick="">
-            </td>
-            <td class="gametds" id="td9">
-                <img id="img9" src="Images/hole.png" onclick="">
-            </td>
-        </tr>
-    </table>
+    <div>
+        <button onclick="resetGame()">Reset game</button>
+        <button id="playbutton" onclick="OnStartGame()">Start game</button>
+        <span id="timer">
+
+        </span>
+    </div>
+    <div id="modal-content"></div>
+
+    <div id="GameDiv" align="center">
+        <button class="gameDifficulty" id="easy" onclick="onStartEasy()">Easy</button>
+        <button class="gameDifficulty" id="medium" onclick="onStartMedium()">Medium</button>
+        <button class="gameDifficulty" id="hard" onclick="onStartHard()">Hard</button>
+        <div>
+            <img src="Images/giflogo.gif" alt="">
+            <!-- first -->
+            <table id="gametable1" align="center">
+                <tr id="firstrow">
+                    <td class="gametds">
+                        <img id="img1" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img2" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img3" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                </tr>
+                <tr id="secondrow">
+                    <td class="gametds">
+                        <img id="img4" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img5" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img6" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                </tr>
+                <tr id="thirdrow">
+                    <td class="gametds">
+                        <img id="img7" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img8" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img9" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                </tr>
+            </table>
+
+            <!-- second -->
+            <table id="gametable2" align="center">
+                <tr id="firstrow">
+                    <td class="gametds">
+                        <img id="img1" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img2" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img3" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img4" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+
+
+                </tr>
+                <tr id="secondrow">
+                    <td class="gametds">
+                        <img id="img5" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img6" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img7" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img8" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                </tr>
+                <tr id="thirdrow">
+                    <td class="gametds">
+                        <img id="img9" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img10" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img11" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img12" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                </tr>
+            </table>
+
+            <!-- third -->
+            <table id="gametable3" align="center">
+                <tr id="firstrow">
+                    <td class="gametds">
+                        <img id="img1" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img2" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img3" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img4" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img5" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img6" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img7" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+
+                </tr>
+                <tr id="secondrow">
+                    <td class="gametds">
+                        <img id="img8" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img9" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img10" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img11" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img12" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img13" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img14" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+
+                </tr>
+                <tr id="thirdrow">
+                    <td class="gametds">
+                        <img id="img15" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img16" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img17" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img18" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img19" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img20" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+                    <td class="gametds">
+                        <img id="img21" src="Images/hole.png" onclick="ClickToScore(this)">
+                    </td>
+
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
 
     <div class=" footer ">
-        <h1> &copy; Site developed by Ori Cohen <img src="Images/Logo.png" height="100px" alt=""></h1>
+        <h1> &copy; Site developed by Ori Cohen <img src="Images/Logo.png" height="50px" alt=""></h1>
 
     </div>
     <script src="Main.js"></script>
