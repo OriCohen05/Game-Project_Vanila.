@@ -1,4 +1,5 @@
 //תמונות המשחק
+
 var img1 = document.getElementById("img1");
 var img2 = document.getElementById("img2");
 var img3 = document.getElementById("img3");
@@ -21,6 +22,12 @@ var img19 = document.getElementById("img19");
 var img20 = document.getElementById("img20");
 var img21 = document.getElementById("img21");
 
+/*
+var imgArray = Array();
+for (i = i; i < 22; i++) {
+  imgArray.push(document.getElementById(`img` + i));
+}
+*/
 
 //טבלאות המשחק
 var table1 = document.getElementById("gametable1");
@@ -29,10 +36,14 @@ var table3 = document.getElementById("gametable3");
 //אלמנטים חיצוניים
 var modalWrapper = document.getElementById("modal-wrapper");
 var modalElement = document.getElementById("modal-content");
+var modalTimer = document.getElementById("modal-timer");
 var gametable = document.getElementById("gametable");
 var score = document.getElementById("Score");
 var startGameButton = document.getElementById("playbutton");
 var timer = document.getElementById("timer");
+var hard = document.getElementById("hard");
+var medium = document.getElementById("medium");
+var easy = document.getElementById("easy");
 //משתנים גלובליים
 var gcount = 0;
 var timeUp;
@@ -40,9 +51,11 @@ var allHoles = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img
 var count = 0;
 var points = 0;
 var time;
+var gBoardSize = 0;
+var gFlag = false;
 //פונקציה שמחזירה את כל החורים למצב הרגיל (רק חורים)
 function resetHoles() {
-    for (var i = 0; i <= 8; i++) {
+    for (var i = 0; i <= gBoardSize; i++) {
         allHoles[i].setAttribute('src', 'Images/hole.png');
     }
 }
@@ -53,77 +66,94 @@ function ClickToScore(object) {
     //-1 במקרה שלי הוא false
     {
         count++;
-        score.innerHTML = count;
+        score.innerHTML = "Your score: " + count;
         object.src = "Images/hole.png";
     }
 }
 //פונקציה שמגרילה חור רנדומלי
 function GenerateHoles() {
     resetHoles();
-    var randomHole = Math.floor(Math.random() * 20);
+    var randomHole = Math.floor(Math.random() * gBoardSize);
+    console.log(randomHole);
     allHoles[randomHole].setAttribute('src', 'Images/Logo.png');
 }
 
 function resetGame() {
     count = 0;
-    score.innerHTML = count;
+    gBoardSize = 0;
+    score.innerHTML = "";
     startGameButton.disabled = false;
     resetHoles();
     clearInterval(time);
     clearInterval(timeUp);
     gcount = 0;
-    timer.innerHTML = gcount;
+    timer.innerHTML = "";
+    table1.style.display = "none";
+    table2.style.display = "none";
+    table3.style.display = "none";
+    gFlag = false;
 }
 
 function roundTimer() {
-    timer.innerHTML = gcount;
+    timer.innerHTML = "game timer: " + gcount;
     gcount += 1;
-    if (gcount === 31) { // Change to 31
+    if (gcount === 31) {
         alert("Time's up");
+        resetHoles();
         resetGame();
-        timer.innerHTML = gcount;
+        timer.innerHTML = ' ';
     }
 
 }
 
 function OnStartGame() {
-    startGameButton.disabled = true;
-    var counter = 5;
-    modalElement.classList.toggle("hide");
-    time = setInterval(GenerateHoles, 2000);
-    var countDown = setInterval(function() {
-        modalElement.innerHTML = counter;
-        counter--;
-        if (counter === -1) {
-            clearInterval(countDown);
-            modalElement.style.visibility = "hidden";
-            timeUp = setInterval(roundTimer, 1000);
-        }
-    }, 1000);
-
+    // if (!gFlag) {
+    //     alert("Choose board before start!");
+    //     easy.disabled = false;
+    //     medium.disabled = false;
+    //     hard.disabled = false;
+    //     gFlag = true;
+    //     resetGame();        
+    // } else {
+        startGameButton.disabled = true;
+        var counter = 5;
+        modalElement.classList.toggle("hide");
+        time = setInterval(GenerateHoles, 2000);
+        var countDown = setInterval(function() {
+            modalElement.innerHTML = counter;
+            counter--;
+            if (counter === -1) {
+                clearInterval(countDown);
+                modalElement.style.display = "none";
+                timeUp = setInterval(roundTimer, 1000);
+            }
+        }, 1000);
+    //}
 }
 
 function onStartEasy() {
-    table1.style.visibility = "visible";
-    table2.style.visibility = "hidden";
-    table3.style.visibility = "hidden";
+    table1.style.display = "block";
+    table2.style.display = "none"
+    table3.style.display = "none";
+    gBoardSize = 8;
 }
 
 function onStartMedium() {
-    table2.style.visibility = "visible";
-    table1.style.visibility = "hidden";
-    table3.style.visibility = "hidden";
+    table2.style.display = "block";
+    table3.style.display = "none";
+    table1.style.display = "none";
+    gBoardSize = 11;
 }
 
 function onStartHard() {
-    table3.style.visibility = "visible";
-    table2.style.visibility = "hidden";
-    table1.style.visibility = "hidden";
+    table3.style.display = "block";
+    table1.style.display = "none";
+    table2.style.display = "none";
+    gBoardSize = 20;
 }
 
 function OnInit() {
-    // modalElement.style.visibility = "hidden";
-    // modalWrapper.style.visibility = "hidden";
+
     modalElement.classList.toggle("hide");
 }
 console.info("All rights saved to Ori Cohen.");
