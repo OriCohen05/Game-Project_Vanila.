@@ -9,12 +9,16 @@
 </head>
 
 <body onload="OnInit()">
-    <ul>
-        <li id="Logo-li"><img src="Images/Logo.png" height="50px" width="50px"></li>
-        <li><a href="../Project/LoginPage.html">Login</a></li>
-        <li><a href="../Project/GamePage.html"><u style="color:white">Game</u></a></li>
-
-    </ul>
+    <div class="container-fluid">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li><a id="len1" class="hoverable" href="../Project/LoginPage.html">Login</a></li>
+              <li><a id="len3" class="hoverable" href="../Project/GamePage.html">Game</a></li>
+              <li><a id="len2" class="hoverable" href="#">About</a></li>
+            </ul>
+          </div>
+        </nav>
 
     
     <div id="gameMenu"><h2 align="center">Game menu</h2>
@@ -23,9 +27,9 @@
             <option value="medium">medium</option>
             <option value="hard">hard</option>
         </select> -->
-        <button class="gameDifficulty" id="easy" onclick="onStartEasy()" disabled>Easy</button>
-        <button class="gameDifficulty" id="medium" onclick="onStartMedium()"disabled>Medium</button>
-        <button class="gameDifficulty" id="hard" onclick="onStartHard()"disabled>Hard</button>
+        <button class="gameDifficulty" id="easy" onclick="onStartEasy()">Easy</button>
+        <button class="gameDifficulty" id="medium" onclick="onStartMedium()" disabled>Medium</button>
+        <button class="gameDifficulty" id="hard" onclick="onStartHard()" disabled>Hard</button>
         <button onclick="resetGame()">Reset game</button>
         <button id="playbutton" onclick="OnStartGame()">Start game</button>
         <div><span id="timer"></span></div>
