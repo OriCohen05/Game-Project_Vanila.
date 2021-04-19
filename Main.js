@@ -22,12 +22,12 @@ var img19 = document.getElementById("img19");
 var img20 = document.getElementById("img20");
 var img21 = document.getElementById("img21");
 
-/*
-var imgArray = Array();
-for (i = i; i < 22; i++) {
-  imgArray.push(document.getElementById(`img` + i));
-}
-*/
+
+// var allHoles = [];
+// for (i = i; i < 22; i++) {
+//   allHoles.push(document.getElementById(`img${i}`));
+// }
+
 
 //טבלאות המשחק
 var table1 = document.getElementById("gametable1");
@@ -66,7 +66,7 @@ function ClickToScore(object) {
     //-1 במקרה שלי הוא false
     {
         count++;
-        score.innerHTML = "Your score: " + count;
+        score.innerHTML = `Your score: ${count} !`;
         object.src = "Images/hole.png";
     }
 }
@@ -74,7 +74,7 @@ function ClickToScore(object) {
 function GenerateHoles() {
     resetHoles();
     var randomHole = Math.floor(Math.random() * gBoardSize);
-    console.log(randomHole);
+    //console.log(randomHole);
     allHoles[randomHole].setAttribute('src', 'Images/Logo.png');
 }
 
@@ -156,4 +156,5 @@ function OnInit() {
 
     modalElement.classList.toggle("hide");
 }
+
 console.info("All rights saved to Ori Cohen.");
