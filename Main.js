@@ -23,10 +23,11 @@ var img20 = document.getElementById("img20");
 var img21 = document.getElementById("img21");
 
 
-// var allHoles = [];
-// for (i = i; i < 22; i++) {
+// var allHoles = new Array(22);
+// for (var i = i; i < 22; i++) {
 //   allHoles.push(document.getElementById(`img${i}`));
 // }
+var allHoles = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21];
 
 
 //טבלאות המשחק
@@ -44,15 +45,16 @@ var timer = document.getElementById("timer");
 var hard = document.getElementById("hard");
 var medium = document.getElementById("medium");
 var easy = document.getElementById("easy");
+var gamediv = document.getElementById("GameDiv");
 //משתנים גלובליים
 var gcount = 0;
 var timeUp;
-var allHoles = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21];
 var count = 0;
 var points = 0;
 var time;
 var gBoardSize = 0;
 var gFlag = false;
+
 //פונקציה שמחזירה את כל החורים למצב הרגיל (רק חורים)
 function resetHoles() {
     for (var i = 0; i <= gBoardSize; i++) {
@@ -98,27 +100,27 @@ function roundTimer() {
     timer.innerHTML = "game timer: " + gcount;
     gcount += 1;
     if (gcount === 31) {
+        gamediv.innerHTML = '';
         alert("Time's up");
         resetHoles();
         resetGame();
-        timer.innerHTML = ' ';
+        timer.innerHTML = '';
     }
 
 }
 
 function OnStartGame() {
-    // if (!gFlag) {
-    //     alert("Choose board before start!");
-    //     easy.disabled = false;
-    //     medium.disabled = false;
-    //     hard.disabled = false;
-    //     gFlag = true;
-    //     resetGame();        
-    // } else {
+    if (!gFlag) {
+        alert("Choose board before start!");
+        easy.disabled = false;
+        medium.disabled = false;
+        hard.disabled = false;
+        resetGame();        
+    } else {
+        gamediv.style.display = "block";
         startGameButton.disabled = true;
         var counter = 5;
         modalElement.classList.toggle("hide");
-        time = setInterval(GenerateHoles, 2000);
         var countDown = setInterval(function() {
             modalElement.innerHTML = counter;
             counter--;
@@ -126,34 +128,34 @@ function OnStartGame() {
                 clearInterval(countDown);
                 modalElement.style.display = "none";
                 timeUp = setInterval(roundTimer, 1000);
+                time = setInterval(GenerateHoles, 2000);
             }
         }, 1000);
-    //}
+    }
 }
-
 function onStartEasy() {
     table1.style.display = "block";
-    table2.style.display = "none"
-    table3.style.display = "none";
+    // table2.style.display = "none";
+    // table3.style.display = "none";
     gBoardSize = 8;
+    gFlag = true;
 }
 
-function onStartMedium() {
-    table2.style.display = "block";
-    table3.style.display = "none";
-    table1.style.display = "none";
-    gBoardSize = 11;
-}
+// function onStartMedium() {
+//     table2.style.display = "block";
+//     table3.style.display = "none";
+//     table1.style.display = "none";
+//     gBoardSize = 11;
+// }
 
-function onStartHard() {
-    table3.style.display = "block";
-    table1.style.display = "none";
-    table2.style.display = "none";
-    gBoardSize = 20;
-}
+// function onStartHard() {
+//     table3.style.display = "block";
+//     table1.style.display = "none";
+//     table2.style.display = "none";
+//     gBoardSize = 20;
+// }
 
 function OnInit() {
-
     modalElement.classList.toggle("hide");
 }
 
