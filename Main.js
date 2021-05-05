@@ -1,5 +1,5 @@
 //תמונות המשחק
-
+// createImagesArr();
 var img1 = document.getElementById("img1");
 var img2 = document.getElementById("img2");
 var img3 = document.getElementById("img3");
@@ -21,13 +21,16 @@ var img18 = document.getElementById("img18");
 var img19 = document.getElementById("img19");
 var img20 = document.getElementById("img20");
 var img21 = document.getElementById("img21");
-
-
-// var allHoles = new Array(22);
-// for (var i = i; i < 22; i++) {
-//   allHoles.push(document.getElementById(`img${i}`));
-// }
 var allHoles = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21];
+
+// var allHoles = [];
+// function createImagesArr() {
+//     allHoles = new Array(gBoardSize);
+//     for (var i = 1; i < 22; i++) 
+//         allHoles[i] += (document.getElementById(`img${i}`));
+
+// }
+
 
 
 //טבלאות המשחק
@@ -75,9 +78,10 @@ function ClickToScore(object) {
 //פונקציה שמגרילה חור רנדומלי
 function GenerateHoles() {
     resetHoles();
-    var randomHole = Math.floor(Math.random() * gBoardSize);
+    var randomHole = Math.floor(Math.random() * 8);
     //console.log(randomHole);
     allHoles[randomHole].setAttribute('src', 'Images/Logo.png');
+    
 }
 
 function resetGame() {
@@ -90,6 +94,7 @@ function resetGame() {
     clearInterval(timeUp);
     gcount = 0;
     timer.innerHTML = "";
+    gamediv.innerHTML = '';
     table1.style.display = "none";
     table2.style.display = "none";
     table3.style.display = "none";
