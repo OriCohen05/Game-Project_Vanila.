@@ -4,43 +4,51 @@
 <head>
     <link href="styles.css" rel="stylesheet">
     <title>Ori's site | Game</title>
-    <link rel="icon" href="Images/Logo.png">
+    <link rel="icon" href="Logo.png">
     <meta charset="utf-8" />
 </head>
+
 <body onload="OnInit()">
+    <div id="popUp" ></div>
     <div class="container-fluid">
         <nav class="navbar navbar-inverse">
-          <div class="container-fluid">
-            <ul class="nav navbar-nav">
-              <li><a id="len1" class="hoverable" href="./LoginPage.html">Login</a></li>
-              <li><a id="len3" class="hoverable" href="./GamePage.html">Game</a></li>
-              <li><a id="len2" class="hoverable" href="#">About</a></li>
-            </ul>
-          </div>
-        </nav>   
-    <div id="gameMenu">
-        <h2 align="center">Game menu</h2>
-        <div align="center">
-        <button class="gameDifficulty" id="easy" onclick="onStartEasy()" >Easy</button>
-        <button class="gameDifficulty" id="medium" onclick="onStartMedium()">Medium</button>
-        <button class="gameDifficulty" id="hard" onclick="onStartHard()">Hard</button>
-        <button onclick="resetGame()">Reset game</button>
-        <button id="playbutton" onclick="OnStartGame()">Start game</button>
-        <h2 >best score: <span id="bestScore"></span> </h2>
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a id="len1" class="hoverable" href="./LoginPage.html">Login</a></li>
+                    <li><a id="len2" class="hoverable" href="./GamePage.html">Game</a></li>
+                </ul>
+            </div>
+            </nav>
+            </div>
+        <div id="gameMenu" align = "center">
+            <h2 align="center">Game menu</h2>
+                <button class="gameDifficulty" id="easy" onclick="difficulty(3,2000,9)">Easy</button>
+                <button class="gameDifficulty" id="medium" onclick="difficulty(4, 1200, 12)">Medium</button>
+                <button class="gameDifficulty" id="hard" onclick="difficulty(5, 750, 18)">Hard</button><br><br>
+                <button id="playbutton" onclick="OnStartGame()">Start game</button>
+                <button onclick="resetGame()" id="resetGameButton">Reset game</button>
+                <h2 id="timer"></h2>
+            <h2 id="recentscore"></h2>
+            <h2 id="streak"></h2>
+            <h2>best score: <span id="bestScore"></span> </h2>
         </div>
-        <span id="timer"></span>
-        <h1 style="text-align: center; margin-top: 80px;">
-            <p id="Score"></p>
-        </h1>
-    </div>
-    <div id="GameDiv" align="center">
-            <table id="gametable1" align="center">
+        <div id="gameStats">
+            
+        </div>
+        <div id="GameDiv" align="center">
+            
+            <h1 id="Score">
+            </h1>
+            <table align="center">
+                <tbody id="gametable1">
+                </tbody>
                 <div id="modal-content"></div>
             </table>
-    </div>
-    <div class=" footer ">
-        <h1> &copy; Site developed by Ori Cohen <img src="Images/Logo.png" height="50px" alt=""></h1>
-    </div>
-    <script src="./Main.js"></script>
+        </div>
+        <div class=" footer ">
+            <h1> &copy; Site developed by Ori Cohen <img src="./Images/Logo.png" height="50" alt=""></h1>
+        </div>
+        <script src="Main.js"></script>
 </body>
+
 </html>
